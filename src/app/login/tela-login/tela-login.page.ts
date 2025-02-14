@@ -33,8 +33,7 @@ export class TelaLoginPage implements OnInit {
   }
 
   login() {
-    if(this.formulario.valid){
-    }
+
   }
 
   cadastrar() {

@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   templateUrl: './cabecalho.page.html',
   styleUrls: ['./cabecalho.page.scss'],
   standalone: true,
-  imports: [IonText, IonButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonNav, IonBackButton, IonIcon]
+  imports: [IonText, IonButton, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonNav, IonIcon]
 })
 export class CabecalhoPage implements OnInit {
 
