@@ -1,0 +1,52 @@
+ion-header {
+  background: #f5f2d0;
+  padding: 10px 84px;
+  display: flex;
+
+  ion-toolbar {
+    display: flex;
+    justify-content: space-between;
+
+    ion-nav {
+      display: flex;
+      align-items: center;
+      padding-left: 55vh;
+      width: 100%;
+      gap: 5vh;
+
+      ion-text {
+        cursor: pointer;
+        color: black;
+        font-size: 1.4rem;
+        font-weight: medium;
+        padding-right: 3vh;
+        &:hover {
+          transform: scale(1.1);
+          transition: 0.3s;
+        }
+      }
+    }
+
+    ion-button {
+      width: 25vh;
+      height: 5vh;
+      font-size: 13px;
+      margin: 12px;
+      font-weight: 700;
+      display: flex;
+      color: black;
+
+
+      &:hover {
+        transform: scale(1.1);
+        transition: 0.3s;
+      }
+    }
+  }
+
+  img {
+    max-width: 200px;
+    cursor: pointer;
+  }
+
+}

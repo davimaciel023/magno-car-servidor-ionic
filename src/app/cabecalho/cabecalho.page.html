@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="f5f2d0">
+    <ion-title>
+      <img [src]="'assets/imagens/logoHeader.png'" alt="" (click)="goToHome()">
+    </ion-title>
+
+    <ion-nav>
+      <ion-text (click)="home()">Home</ion-text>
+      <ion-text (click)="sobre()">Sobre</ion-text>
+      <ion-text (click)="servicos()">Serviços</ion-text>
+    </ion-nav>
+
+
+    <ion-button slot="end" color="tranparent" fill="outline">
+      <ion-icon name="call" slot="start" ></ion-icon>
+      Contato
+    </ion-button>
+    <ion-button slot="end" color="danger" (click)="login()">
+      <ion-icon name="person-add-outline" slot="start"></ion-icon>
+      Login
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+

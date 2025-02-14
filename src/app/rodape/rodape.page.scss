@@ -1,0 +1,18 @@
+ion-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 8vh;
+  background-color: #990401;
+
+  ion-toolbar {
+    display: flex;
+
+    ion-title {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+}

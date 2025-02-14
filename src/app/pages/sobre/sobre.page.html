@@ -1,0 +1,25 @@
+
+<app-cabecalho></app-cabecalho>
+<ion-content [fullscreen]="true">
+  <ion-title>Informações</ion-title>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <img [src]="'assets/imagens/WhatsApp Image 2025-01-29 at 12.34.21.jpeg'" alt="">
+      </ion-col>
+      <ion-col>
+        <ion-text>
+          <h2>Sobre Mim</h2>
+          <p>{{ sobre }}</p>
+        </ion-text>
+        <ion-text>
+          <h2>Oficina Magno Car</h2>
+          <p>{{ magnoCar }}</p>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<app-rodape></app-rodape>

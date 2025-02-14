@@ -1,0 +1,25 @@
+<app-cabecalho></app-cabecalho>
+
+<ion-content [fullscreen]="true" >
+  <ion-grid>
+    <ion-row>
+      <ion-title>
+        <span>Descubra</span> o que torna nosso <span> <br>trabalho excepcional!</span>
+      </ion-title>
+      <ion-text>
+        <p>Deixe seu veículo conosco e experimente a tranquilidade de saber <br> que está em mãos especializadas!</p>
+      </ion-text>
+      <ion-button color="tranparent" fill="clear" (click)="goToServicos()">
+        <ion-icon name="car" slot="start"></ion-icon>
+        Conheça nossos serviços
+      </ion-button>
+    </ion-row>
+    <ion-row>
+      <div class="image">
+        <img [src]="'assets/imagens/carro.avif'" alt="">
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<app-rodape></app-rodape>>
