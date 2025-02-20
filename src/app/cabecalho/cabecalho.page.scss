@@ -10,7 +10,7 @@ ion-header {
     ion-nav {
       display: flex;
       align-items: center;
-      padding-left: 55vh;
+      padding-left: 30%;
       width: 100%;
       gap: 5vh;
 
@@ -19,7 +19,6 @@ ion-header {
         color: black;
         font-size: 1.4rem;
         font-weight: medium;
-        padding-right: 3vh;
         &:hover {
           transform: scale(1.1);
           transition: 0.3s;
@@ -47,6 +46,20 @@ ion-header {
   img {
     max-width: 200px;
     cursor: pointer;
+  }
+
+
+
+  // RESPONSIVIDADE
+  @media screen and (max-width: 1340px) {
+    ion-toolbar {
+
+      ion-nav {
+        padding-left: 25%;
+        width: 100%;
+        gap: 5vh;
+      }
+    }
   }
 
 }

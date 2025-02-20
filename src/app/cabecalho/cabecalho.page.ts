@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonNav, IonBackButton, IonText, IonIcon } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonNav, IonText, IonIcon,IonMenuButton, IonMenu } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { call, personAddOutline } from 'ionicons/icons';
 import { Router } from '@angular/router';
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   templateUrl: './cabecalho.page.html',
   styleUrls: ['./cabecalho.page.scss'],
   standalone: true,
-  imports: [IonText, IonButton, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonNav, IonIcon]
+  imports: [IonText, IonButton, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonNav, IonIcon, IonButtons, IonMenuButton, IonMenu]
 })
 export class CabecalhoPage implements OnInit {
 

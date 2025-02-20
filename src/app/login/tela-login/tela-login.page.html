@@ -1,36 +1,69 @@
-<ion-content [fullscreen]="true">
-  <form [formGroup]="formulario" (ngSubmit)="login()">
-    <div class="container">
-      <div class="titulo">
-        <h1>{{ titulo }}</h1>
-      </div>
-      <div class="subtitulo">
-        <h3>{{ subtitulo }}</h3>
-      </div>
-
-      <div class="email valores">
-        <ion-input label="Email" label-placement="floating" fill="solid" placeholder="Digite seu email" formControlName="email">
-        </ion-input>
-        <div class="msg__erro" *ngIf="formulario.get('email')?.invalid && formulario.get('email')?.touched">Campo obrigatório</div>
-      </div>
-      <div class="senha valores">
-        <ion-input label="senha" label-placement="floating" fill="solid" placeholder="Digite sua senha" formControlName="senha">
-        </ion-input>
-        <div class="msg__erro" *ngIf="formulario.get('senha')?.invalid && formulario.get('senha')?.touched">Campo obrigatório</div>
-      </div>
-
-      <div class="esqueceu-senha">
-        <ion-checkbox labelPlacement="end" color="danger"></ion-checkbox>
-        <ion-label>Lembrar de mim</ion-label>
-        <a href="#">Esqueceu sua senha?</a>
-      </div>
-
-      <div class="cadastro">
-        <ion-text>Não tem uma conta?</ion-text>
-        <ion-text (click)="cadastrar()">Cadastre-se</ion-text>
-      </div>
-
-      <ion-button type="submit" color="danger">Login</ion-button>
+<ion-content>
+  <div class="formulario">
+    <div class="lado-esquerdo">
+      <ion-img src="assets/imagens/logoHeader.png"></ion-img>
+      <ion-label>Seja Bem Vindo!</ion-label>
+      <ion-text>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex quidem eos sit molestias ipsum ipsa.</ion-text>
+      <ion-button color="danger">Learn More</ion-button>
     </div>
-  </form>
+    <div class="lado-direito">
+
+      <ion-segment value="login" color="danger">
+        <ion-segment-button value="login" contentId="login" color="danger">
+          <ion-label>Login</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="cadastro" contentId="cadastro">
+          <ion-label>Cadastro</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+      <ion-segment-view>
+        <ion-segment-content id="login">
+          <div class="text">
+            <ion-text>Login</ion-text>
+          </div>
+          <div class="camposInput">
+            <ion-input label="Digite seu email" label-placement="floating" fill="solid" color="danger"></ion-input>
+
+            <ion-input type="password" label="Digite sua senha"  label-placement="floating" fill="solid" color="danger">
+
+            </ion-input>
+            <div class="infos">
+              <div class="lembraDeMim">
+                <ion-checkbox slot="start" color="danger"></ion-checkbox>
+                <ion-label>Lembrar de mim</ion-label>
+              </div>
+              <div class="esqueceu-senha">
+                <ion-text>Esqueceu senha?</ion-text>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="botoes">
+            <ion-button color="danger">Entrar</ion-button>
+          </div>
+        </ion-segment-content>
+
+        <ion-segment-content id="cadastro">
+          <div class="text">
+            <ion-text>Cadastro</ion-text>
+          </div>
+          <div class="camposInput">
+            <ion-input label="Digite o nome de usuário" label-placement="floating" fill="solid" color="danger"></ion-input>
+            <ion-input label="Digite seu email" label-placement="floating" fill="solid" color="danger"></ion-input>
+            <ion-input label="Digite o modelo do carro" label-placement="floating" fill="solid" color="danger"></ion-input>
+
+            <ion-input type="password" label="Digite sua senha"  label-placement="floating" fill="solid" color="danger">
+
+            </ion-input>
+          </div>
+
+          <div class="botoes">
+            <ion-button color="danger">Cadastrar</ion-button>
+          </div>
+        </ion-segment-content>
+      </ion-segment-view>
+    </div>
+  </div>
 </ion-content>
