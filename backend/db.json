@@ -1,5 +1,12 @@
 {
     "carros": [],
     "produtos": [],
-    "usuarios": []
+    "usuarios": [
+        {
+            "nomeDoUsuario": "davi",
+            "email": "davi@gmail.com",
+            "modeloCarro": "lamborguini",
+            "senha": "123456"
+        }
+    ]
 }

@@ -42,61 +42,67 @@ ion-content {
       padding: 10px 40px;
 
 
-      ion-segment-view{
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
 
-        ion-segment-content {
+        .text {
+          ion-text {
+            font-size: 30px;
+            font-weight: bold;
+          }
+        }
+
+        ion-label {
+          font-size: 20px;
+        }
+        .camposInput {
           display: flex;
           flex-direction: column;
           gap: 20px;
-          align-items: center;
-          justify-content: center;
+          width: 100%;
 
-          .text {
-            ion-text {
-              font-size: 30px;
-              font-weight: bold;
-            }
+          .msg__erro{
+            color: red;
+            font-size: 10px;
+            font-weight: bold;
+            text-align: start;
+            margin-top: -20px;
           }
 
-
-          ion-label {
-            font-size: 20px;
+          ion-input {
+            --padding-start: 10px;
+            text-align: start;
+            --background: transparent;
           }
-          .camposInput {
+          .infos {
             display: flex;
-            flex-direction: column;
-            gap: 20px;
-            width: 100%;
+            justify-content: space-between;
 
-            ion-input {
-              --padding-start: 10px;
-              text-align: start;
-            }
-            .infos {
+            .lembraDeMim {
               display: flex;
-              justify-content: space-between;
+              align-items: center;
+              gap: 5px;
 
-              .lembraDeMim {
-                display: flex;
-                align-items: center;
-                gap: 5px;
-
-                ion-checkbox {
-                  --size: 20px;
-                }
-                ion-label {
-                  font-size: 12px;
-                }
+              ion-checkbox {
+                --size: 20px;
+              }
+              ion-label {
+                font-size: 12px;
               }
             }
           }
-
-
-          .botoes {
-            padding-top: 4vh;
-
-          }
         }
+
+
+        .botoes {
+          padding-top: 4vh;
+
+        }
+
       }
     }
   }

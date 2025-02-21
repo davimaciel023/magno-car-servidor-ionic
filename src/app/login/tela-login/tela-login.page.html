@@ -6,64 +6,95 @@
       <ion-text>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex quidem eos sit molestias ipsum ipsa.</ion-text>
       <ion-button color="danger">Learn More</ion-button>
     </div>
-    <div class="lado-direito">
 
-      <ion-segment value="login" color="danger">
-        <ion-segment-button value="login" contentId="login" color="danger">
-          <ion-label>Login</ion-label>
+    <div class="lado-direito">
+      <ion-segment [(ngModel)]="segmentValue" color="danger">
+        <ion-segment-button value="entrar">
+          <ion-label>Entrar</ion-label>
         </ion-segment-button>
-        <ion-segment-button value="cadastro" contentId="cadastro">
+        <ion-segment-button value="cadastro">
           <ion-label>Cadastro</ion-label>
         </ion-segment-button>
       </ion-segment>
 
-      <ion-segment-view>
-        <ion-segment-content id="login">
-          <div class="text">
-            <ion-text>Login</ion-text>
-          </div>
-          <div class="camposInput">
-            <ion-input label="Digite seu email" label-placement="floating" fill="solid" color="danger"></ion-input>
-
-            <ion-input type="password" label="Digite sua senha"  label-placement="floating" fill="solid" color="danger">
-
-            </ion-input>
-            <div class="infos">
-              <div class="lembraDeMim">
-                <ion-checkbox slot="start" color="danger"></ion-checkbox>
-                <ion-label>Lembrar de mim</ion-label>
-              </div>
-              <div class="esqueceu-senha">
-                <ion-text>Esqueceu senha?</ion-text>
-              </div>
-
+      <div [ngSwitch]="segmentValue">
+        <div *ngSwitchCase="'entrar'">
+          <form [formGroup]="formularioLogin" class="ion-segment-content">
+            <div class="text">
+              <ion-text>Login</ion-text>
             </div>
-          </div>
+            <div class="camposInput">
+              <ion-input label="Digite seu email" label-placement="floating" fill="solid" color="danger" formControlName="email"></ion-input>
+              <div class="msg__erro" *ngIf="formularioLogin.get('email')?.errors?.['required'] && formularioLogin.get('email')?.touched">
+                O campo do email está incorreto
+              </div>
 
-          <div class="botoes">
-            <ion-button color="danger">Entrar</ion-button>
-          </div>
-        </ion-segment-content>
+              <ion-input type="password" label="Digite sua senha" label-placement="floating" fill="solid" color="danger" formControlName="senha"></ion-input>
+              <div class="msg__erro" *ngIf="formularioLogin.get('senha')?.errors?.['required'] && formularioLogin.get('senha')?.touched">
+                O campo da senha está incorreto
+              </div>
 
-        <ion-segment-content id="cadastro">
-          <div class="text">
-            <ion-text>Cadastro</ion-text>
-          </div>
-          <div class="camposInput">
-            <ion-input label="Digite o nome de usuário" label-placement="floating" fill="solid" color="danger"></ion-input>
-            <ion-input label="Digite seu email" label-placement="floating" fill="solid" color="danger"></ion-input>
-            <ion-input label="Digite o modelo do carro" label-placement="floating" fill="solid" color="danger"></ion-input>
+              <div class="infos">
+                <div class="lembraDeMim">
+                  <ion-checkbox slot="start" color="danger"></ion-checkbox>
+                  <ion-label>Lembrar de mim</ion-label>
+                </div>
+                <div class="esqueceu-senha">
+                  <ion-text (click)="esqueceuSenha()">Esqueceu senha?</ion-text>
+                </div>
+              </div>
+            </div>
+            <div class="botoes">
+              <ion-button color="danger" (click)="login()">Entrar</ion-button>
+            </div>
+          </form>
+        </div>
 
-            <ion-input type="password" label="Digite sua senha"  label-placement="floating" fill="solid" color="danger">
+        <div *ngSwitchCase="'cadastro'">
+          <form [formGroup]="formularioCadastro">
+            <div class="text">
+              <ion-text>Cadastro</ion-text>
+            </div>
+            <div class="camposInput">
+              <ion-input
+                label="Digite o nome de usuário"
+                label-placement="floating"
+                fill="solid"
+                color="danger"
+                formControlName="nomeDoUsuario">
+              </ion-input>
 
-            </ion-input>
-          </div>
+              <ion-input
+                label="Digite seu email"
+                label-placement="floating"
+                fill="solid"
+                color="danger"
+                formControlName="email">
+              </ion-input>
 
-          <div class="botoes">
-            <ion-button color="danger">Cadastrar</ion-button>
-          </div>
-        </ion-segment-content>
-      </ion-segment-view>
+              <ion-input
+                label="Digite o modelo do carro"
+                label-placement="floating"
+                fill="solid"
+                color="danger"
+                formControlName="modeloCarro">
+              </ion-input>
+
+              <ion-input
+                type="password"
+                label="Digite sua senha"
+                label-placement="floating"
+                fill="solid"
+                color="danger"
+                formControlName="senha">
+              </ion-input>
+            </div>
+            <div class="botoes">
+              <ion-button color="danger">Cadastrar</ion-button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </ion-content>

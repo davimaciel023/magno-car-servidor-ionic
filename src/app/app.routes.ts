@@ -31,7 +31,7 @@ export const routes: Routes = [
     loadComponent: () => import('./login/tela-login/tela-login.page').then( m => m.TelaLoginPage)
   },
   {
-    path: 'cadastrar',
-    loadComponent: () => import('./login/cadastrar/cadastrar.page').then( m => m.CadastrarPage)
-  },
+    path: 'esqueceu-senha',
+    loadComponent: () => import('./login/esqueceu-senha/esqueceu-senha.page').then( m => m.EsqueceuSenhaPage)
+  }
 ];

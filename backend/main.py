@@ -5,6 +5,15 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins = ["http://localhost:8100"],
+    allow_credentials = True,
+    allow_methods = ["*"],
+    allow_headers = ["*"]
+)
+
+
 def carregar_dados():
     try:
         with open('db.json', 'r') as file:
@@ -97,5 +106,5 @@ async def login(
     for usuario in usuarios:
         if usuario['email'] == email and usuario['senha'] == senha:
           return ('usuario logado com sucesso')
-    return ('usuario ou senha incorretos')
+    raise HTTPException (status_code=404, detail="Usuario não Existe.")
 
